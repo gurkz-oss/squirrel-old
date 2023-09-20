@@ -4,7 +4,7 @@ import "dotenv/config";
 
 export const env = createEnv({
   server: {
-    TOKEN: z.string().url(),
+    TOKEN: z.string().min(12),
   },
   runtimeEnv: process.env,
 });
