@@ -13,6 +13,8 @@
   },
   "scripts": {
     "start": "bun src/main.ts",
+    "_comment": "in case we need special stuff for prod",
+    "start-prod": "bun src/main.ts",
     "lint": "eslint --ext ts src/**/*.ts"
   },
   "dependencies": {
