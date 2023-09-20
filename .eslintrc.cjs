@@ -12,7 +12,9 @@ const config = {
     "plugin:@typescript-eslint/stylistic-type-checked",
     "prettier",
   ],
-  rules: {},
+  rules: {
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+  },
 };
 
 module.exports = config;

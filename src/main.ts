@@ -1,14 +1,11 @@
-import { Client, Events, GatewayIntentBits } from "discord.js";
+import { GatewayIntentBits } from "discord.js";
 import { env } from "./lib/env";
+import { ExtendedClient } from "./lib/client";
 
 const intents = [GatewayIntentBits.Guilds];
 
-const client = new Client({
+const client = new ExtendedClient({
   intents,
 });
 
-client.once(Events.ClientReady, (c) => {
-  console.log(`ready as ${c.user.tag}`);
-});
-
-void client.login(env.TOKEN);
+void client.start(env.TOKEN);
