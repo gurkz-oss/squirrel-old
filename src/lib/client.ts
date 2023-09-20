@@ -19,7 +19,6 @@ export class ExtendedClient extends Client<true> {
 
     events.forEach((event) => {
       if (event.options.once) {
-        console.log(event);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         this.once(event.name, (...args) => event.callback(this, ...args));
       } else {
