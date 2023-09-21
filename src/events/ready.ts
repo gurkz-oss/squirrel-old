@@ -1,10 +1,10 @@
 import { Events } from "discord.js";
-import { createEvent } from "../lib/event";
+import { createEvent } from "../utils/event";
 
 createEvent(
   Events.ClientReady,
-  (c) => {
-    console.log(`ready as ${c.user.tag}`);
+  (c, log) => {
+    log(`ready as ${c.user.tag}`);
   },
   { once: true }
 );

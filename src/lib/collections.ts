@@ -1,5 +1,5 @@
 import { ClientEvents, Collection } from "discord.js";
-import { Event } from "./event";
+import { Event } from "../utils/event";
 
 export const events = new Collection<
   keyof ClientEvents,
