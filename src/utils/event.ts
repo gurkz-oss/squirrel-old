@@ -6,10 +6,12 @@ export type Event<K extends keyof ClientEvents> = {
   name: K;
   options?: { once?: boolean };
   callback: (
-    client: ExtendedClient,
-    log: (...args: unknown[]) => void,
+    props: {
+      client: ExtendedClient;
+      log: (from: string, ...args: unknown[]) => void;
+    },
     ...args: ClientEvents[K]
-  ) => Awaitable<void>;
+  ) => Awaitable<unknown>;
 };
 
 export function createEvent<K extends keyof ClientEvents>(
